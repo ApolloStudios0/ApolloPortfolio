@@ -76,6 +76,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 5px;
     width: 390px;
+    opacity: 0.8;
 }
 
 .CardTitle {
@@ -108,6 +109,7 @@ body {
     object-fit: cover;
     /* on hover make the image large */
     transition: all 0.5s ease;
+    image-rendering: crisp-edges;
 
 }
 
