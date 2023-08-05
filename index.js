@@ -1,227 +1,122 @@
-/*          *     .        *  .    *    *   . 
- .  *  move your mouse to over the stars   .
- *  .  .   change these values:   .  *
-   .      * .        .          * .       */
-   const STAR_COLOR = '#fff';
-   const STAR_SIZE = 5;
-   const STAR_MIN_SCALE = 0.5;
-   const OVERFLOW_THRESHOLD = 50;
-   const STAR_COUNT = ( window.innerWidth + window.innerHeight ) / 8;
-   
-   const canvas = document.querySelector( 'canvas' ),
-         context = canvas.getContext( '2d' );
-   
-   let scale = 1, // device pixel ratio
-       width,
-       height;
-   
-   let stars = [];
-   
-   let pointerX,
-       pointerY;
-   
-   let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
-   
-   let touchInput = false;
-   
-   generate();
-   resize();
-   step();
-   
-   window.onresize = resize;
-   canvas.onmousemove = onMouseMove;
-   canvas.ontouchmove = onTouchMove;
-   canvas.ontouchend = onMouseLeave;
-   document.onmouseleave = onMouseLeave;
-   
-   function generate() {
-   
-      for( let i = 0; i < STAR_COUNT; i++ ) {
-       stars.push({
-         x: 0,
-         y: 0,
-         z: STAR_MIN_SCALE + Math.random() * ( 1 - STAR_MIN_SCALE )
-       });
-      }
-   
-   }
-   
-   function placeStar( star ) {
-   
-     star.x = Math.random() * width;
-     star.y = Math.random() * height;
-   
-   }
-   
-   function recycleStar( star ) {
-   
-     let direction = 'z';
-   
-     let vx = Math.abs( velocity.x ),
-           vy = Math.abs( velocity.y );
-   
-     if( vx > 1 || vy > 1 ) {
-       let axis;
-   
-       if( vx > vy ) {
-         axis = Math.random() < vx / ( vx + vy ) ? 'h' : 'v';
-       }
-       else {
-         axis = Math.random() < vy / ( vx + vy ) ? 'v' : 'h';
-       }
-   
-       if( axis === 'h' ) {
-         direction = velocity.x > 0 ? 'l' : 'r';
-       }
-       else {
-         direction = velocity.y > 0 ? 't' : 'b';
-       }
-     }
-     
-     star.z = STAR_MIN_SCALE + Math.random() * ( 1 - STAR_MIN_SCALE );
-   
-     if( direction === 'z' ) {
-       star.z = 0.1;
-       star.x = Math.random() * width;
-       star.y = Math.random() * height;
-     }
-     else if( direction === 'l' ) {
-       star.x = -OVERFLOW_THRESHOLD;
-       star.y = height * Math.random();
-     }
-     else if( direction === 'r' ) {
-       star.x = width + OVERFLOW_THRESHOLD;
-       star.y = height * Math.random();
-     }
-     else if( direction === 't' ) {
-       star.x = width * Math.random();
-       star.y = -OVERFLOW_THRESHOLD;
-     }
-     else if( direction === 'b' ) {
-       star.x = width * Math.random();
-       star.y = height + OVERFLOW_THRESHOLD;
-     }
-   
-   }
-   
-   function resize() {
-   
-     scale = window.devicePixelRatio || 1;
-   
-     width = window.innerWidth * scale;
-     height = window.innerHeight * scale;
-   
-     canvas.width = width;
-     canvas.height = height;
-   
-     stars.forEach( placeStar );
-   
-   }
-   
-   function step() {
-   
-     context.clearRect( 0, 0, width, height );
-   
-     update();
-     render();
-   
-     requestAnimationFrame( step );
-   
-   }
-   
-   function update() {
-   
-     velocity.tx *= 0.96;
-     velocity.ty *= 0.96;
-   
-     velocity.x += ( velocity.tx - velocity.x ) * 0.8;
-     velocity.y += ( velocity.ty - velocity.y ) * 0.8;
-   
-     stars.forEach( ( star ) => {
-   
-       star.x += velocity.x * star.z;
-       star.y += velocity.y * star.z;
-   
-       star.x += ( star.x - width/2 ) * velocity.z * star.z;
-       star.y += ( star.y - height/2 ) * velocity.z * star.z;
-       star.z += velocity.z;
-     
-       // recycle when out of bounds
-       if( star.x < -OVERFLOW_THRESHOLD || star.x > width + OVERFLOW_THRESHOLD || star.y < -OVERFLOW_THRESHOLD || star.y > height + OVERFLOW_THRESHOLD ) {
-         recycleStar( star );
-       }
-   
-     } );
-   
-   }
-   
-   function render() {
-   
-     stars.forEach( ( star ) => {
-   
-       context.beginPath();
-       context.lineCap = 'round';
-       context.lineWidth = STAR_SIZE * star.z * scale;
-       context.globalAlpha = 0.5 + 0.5*Math.random();
-       context.strokeStyle = STAR_COLOR;
-   
-       context.beginPath();
-       context.moveTo( star.x, star.y );
-   
-       var tailX = velocity.x * 2,
-           tailY = velocity.y * 2;
-   
-       // stroke() wont work on an invisible line
-       if( Math.abs( tailX ) < 0.1 ) tailX = 0.5;
-       if( Math.abs( tailY ) < 0.1 ) tailY = 0.5;
-   
-       context.lineTo( star.x + tailX, star.y + tailY );
-   
-       context.stroke();
-   
-     } );
-   
-   }
-   
-   function movePointer( x, y ) {
-   
-     if( typeof pointerX === 'number' && typeof pointerY === 'number' ) {
-   
-       let ox = x - pointerX,
-           oy = y - pointerY;
-   
-       velocity.tx = velocity.tx + ( ox / 8*scale ) * ( touchInput ? 1 : -1 );
-       velocity.ty = velocity.ty + ( oy / 8*scale ) * ( touchInput ? 1 : -1 );
-   
-     }
-   
-     pointerX = x;
-     pointerY = y;
-   
-   }
-   
-   function onMouseMove( event ) {
-   
-     touchInput = false;
-   
-     movePointer( event.clientX, event.clientY );
-   
-   }
-   
-   function onTouchMove( event ) {
-   
-     touchInput = true;
-   
-     movePointer( event.touches[0].clientX, event.touches[0].clientY, true );
-   
-     event.preventDefault();
-   
-   }
-   
-   function onMouseLeave() {
-   
-     pointerX = null;
-     pointerY = null;
-   
-   }
-   
+// [ Load Cards ]
+window.onload = function() {
+  var cards = [
+    {
+      "title": "AETOS Server Manager",
+      "description": "A 0.0ms Server Management Panel - Controls: Players, Server, Scripts & Has Hundreds Of Development Options.",
+      "image": "./assets/aetos.png"
+    },
+    {
+      "title": "AP Block Minigame",
+      "description": "A Small, highly customizable standalone block minigame.",
+      "image": "./assets/blockGame.png"
+    },
+    {
+      "title": "AP City Hall",
+      "description": "A Modern QBCORE Job Searching/License UI",
+      "image": "./assets/cityHall.png"
+    },
+    {
+      "title": "IPAD ODB Reader",
+      "description": "An IPAD UI for Full Vehicle Observations. Comes standard with all vehicle option monitoring. IE: Oil, Fuel, Suspension.",
+      "image": "./assets/ODBReader.png"
+    },
+    {
+      "title": "AP Payments",
+      "description": "A modern, flexible payment system for QBCORE. Registering at any location, this allows players to invoice another player on the spot.",
+      "image": "./assets/payments.png"
+    },
+    {
+      "title": "AP Crafting",
+      "description": "A modern crafting system for QBCORE.",
+      "image": "./assets/crafting.png"
+    },
+    {
+      "title": "Medical Trauma Team UI",
+      "description": "[Custom Asset] A dynamic hud for purchasing medical licenses for a CyberPunk 2077 themed server.",
+      "image": "./assets/purchaseui.png"
+    },
+    {
+      "title": "Modern Hacking Terminal",
+      "description": "Modern Hacking Terminal for QBCORE. Each ATM assigned a unique IP/PORT & randomized encryption, security firewalls and mini-activites.",
+      "image": "./assets/cmd.png"
+    },
+    {
+      "title": "Bring My Vehicle",
+      "description": "A flexible standalone plugin that allows the player to save a vehicle & have it hand delivered across the map by a mechanic ped.",
+      "image": "./assets/mechanic.jpeg"
+    },
+    {
+      "title": "LSPDFR Re-Write",
+      "description": "An almost complete re-write of the LSPDFR plugin for FiveM. With the ability to talk to any NPC, randomized callout events & more.",
+      "image": "./assets/LSPDFR.png"
+    },
+    {
+      "title": "AI Police Escort",
+      "description": "Need an escort from the police, but dont have any available LEOs? Well now you can with an AI Police Escort.",
+      "image": "./assets/escort.jpeg"
+    },
+    {
+      "title": "NPC BOLO Snitching",
+      "description": "QBCore - Allows police officers to enter a BOLO in real time and have a configured chance for locals to call the police.",
+      "image": "./assets/snitching.png"
+    },
+    {
+      "title": "QB Auction House",
+      "description": "Allows the buying, selling & trading of player items. Centralized database instead of using external platforms like discord.",
+      "image": "./assets/ah.png"
+    },
+    {
+      "title": "Tutorial Resource",
+      "description": "Unique, smooth & reactive tutorial or heads up text. Useful for providing tips, tricks & tutorial text.",
+      "image": "./assets/tuttext.png"
+    },
+    {
+      "title": "Virtual Game HUD",
+      "description": "Virtual, Dynamically updated game hud that shows ammo, maxammo & has a smooth-scrolling healthbar.",
+      "image": "./assets/apgamehud.png"
+    },
+    {
+      "title": "Custom Script Development",
+      "description": "I've developed hundreds of custom scripts upon request. These range from UI/UX designs to entire frameworks. Stuff that I can't put into pictures!",
+      "image": "./assets/cog.jpg"
+    },
+  ];
+
+  // Loop Through Cards
+  for (var i = 0; i < cards.length; i++) {
+    // Create Card
+    var card = document.createElement("div");
+    card.className = "Card";
+
+    // Create Card Image
+    var cardImage = document.createElement("img");
+    cardImage.className = "CardImage";
+    cardImage.src = cards[i].image;
+
+    // Create Card Title
+    var cardTitle = document.createElement("h3");
+    cardTitle.className = "CardTitle";
+    cardTitle.innerHTML = cards[i].title;
+
+    // Create Card Description
+    var cardDescription = document.createElement("h3");
+    cardDescription.className = "CardDescription";
+    cardDescription.innerHTML = cards[i].description;
+
+    // Append Card Image To Card
+    card.appendChild(cardImage);
+
+    // Append Card Title To Card
+    card.appendChild(cardTitle);
+
+    // Append Card Description To Card
+    card.appendChild(cardDescription);
+
+    // Append Card To Body
+    document.body.appendChild(card);
+
+    // Add div to Container div
+    document.getElementById("Container").appendChild(card);
+  }
+};  
