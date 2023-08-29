@@ -7,6 +7,11 @@ window.onload = function() {
       "image": "./assets/aetos.png"
     },
     {
+      "title": "LunarAuthority",
+      "description": "A custom admin menu, originally built for QBCORE. Has hundreds of features, including: Player Management, Server Management, Script Management & more.",
+      "image": "./assets/lunarAuthority.png"
+    },
+    {
       "title": "AP Block Minigame",
       "description": "A Small, highly customizable standalone block minigame.",
       "image": "./assets/blockGame.png"
@@ -22,9 +27,34 @@ window.onload = function() {
       "image": "./assets/ODBReader.png"
     },
     {
+      "title": "Clothing Whitelist",
+      "description": "A real time, dynamic clothing whitelist. Allows you to whitelist clothing items on the fly. Useful for custom gang clothing.",
+      "image": "./assets/clWhitelist.png"
+    },
+    {
+      "title": "Custom Loading Screen",
+      "description": "A fully customizable loading screen. https://www.youtube.com/watch?v=98nghuYpWFM",
+      "image": "./assets/tsrp.png"
+    },
+    {
+      "title": "Custom Drug System",
+      "description": "A complete custom drugs framework. Including Weed, Cocaine & Other Custom Chemical Mixing - paired with a custom built UI.",
+      "image": "./assets/cDrugs.png"
+    },
+    {
+      "title": "Custom Skills Framework",
+      "description": "A skills framework for QBCORE/ESX. Allows you to create skills, level them up & have them effect the player in real time.",
+      "image": "./assets/skills.png"
+    },
+    {
       "title": "AP Payments",
       "description": "A modern, flexible payment system for QBCORE. Registering at any location, this allows players to invoice another player on the spot.",
       "image": "./assets/payments.png"
+    },
+    {
+      "title": "AP Payments v2",
+      "description": "An update to the original AP Payments. This version allows players to invoice another player on the spot, or pay a bill at any location.",
+      "image": "./assets/monzoCard.png"
     },
     {
       "title": "AP Crafting",
@@ -75,6 +105,11 @@ window.onload = function() {
       "title": "Virtual Game HUD",
       "description": "Virtual, Dynamically updated game hud that shows ammo, maxammo & has a smooth-scrolling healthbar.",
       "image": "./assets/apgamehud.png"
+    },
+    {
+      "title": "Object Helper",
+      "description": "A simple, yet powerful object helper. Allows you to spawn objects, save them & delete them. Useful for mapping & development.",
+      "image": "./assets/objectHelper.jpeg"
     },
     {
       "title": "Custom Script Development",
