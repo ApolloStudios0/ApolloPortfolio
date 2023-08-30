@@ -27,6 +27,11 @@ window.onload = function() {
       "image": "./assets/cityHall.png"
     },
     {
+      "title": "Stock Market",
+      "description": "A dynamic stock market for dynamic item pricing. Easy to integrate, simple to view & easy to use. Players can also purchase adverts for display on the right.",
+      "image": "./assets/stockm.png"
+    },
+    {
       "title": "Gangs UI",
       "description": "A Fully Dynamic & Live-Updated Gang UI - Allows Players To View Top Gang Territories & More.",
       "image": "./assets/gangui.png"
