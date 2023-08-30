@@ -27,6 +27,11 @@ window.onload = function() {
       "image": "./assets/cityHall.png"
     },
     {
+      "title": "Gangs UI",
+      "description": "A Fully Dynamic & Live-Updated Gang UI - Allows Players To View Top Gang Territories & More.",
+      "image": "./assets/gangui.png"
+    },
+    {
       "title": "IPAD ODB Reader",
       "description": "An IPAD UI for Full Vehicle Observations. Comes standard with all vehicle option monitoring. IE: Oil, Fuel, Suspension.",
       "image": "./assets/ODBReader.png"
