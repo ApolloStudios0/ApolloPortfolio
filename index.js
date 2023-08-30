@@ -12,6 +12,11 @@ window.onload = function() {
       "image": "./assets/lunarAuthority.png"
     },
     {
+      "title": "Cyberware Menu",
+      "description": "A custom cybernetics UI for a CyberPunk 2077 themed server. Allows players to purchase cybernetics, upgrade them & more.",
+      "image": "./assets/cyberware.png"
+    },
+    {
       "title": "AP Block Minigame",
       "description": "A Small, highly customizable standalone block minigame.",
       "image": "./assets/blockGame.png"
