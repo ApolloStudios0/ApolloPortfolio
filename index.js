@@ -47,6 +47,11 @@ window.onload = function() {
       "image": "./assets/clWhitelist.png"
     },
     {
+      "title": "Progress Bar Pack",
+      "description": "A free progress bar pack for QBCORE.",
+      "image": "./assets/progressbarPack.jpeg"
+    },
+    {
       "title": "Custom Loading Screen",
       "description": "A fully customizable loading screen. https://www.youtube.com/watch?v=98nghuYpWFM",
       "image": "./assets/tsrp.png"
