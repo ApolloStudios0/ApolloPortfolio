@@ -57,6 +57,11 @@ window.onload = function() {
       "image": "./assets/tsrp.png"
     },
     {
+      "title": "Welcome Gift",
+      "description": "A welcome gift that contains a booklet. Upon using the booklet a nice little UI pops up that explains a bit about the server. Fully dynamic & changeable on the fly.",
+      "image": "./assets/welcomeUI.png"
+    },
+    {
       "title": "Custom Drug System",
       "description": "A complete custom drugs framework. Including Weed, Cocaine & Other Custom Chemical Mixing - paired with a custom built UI.",
       "image": "./assets/cDrugs.png"
