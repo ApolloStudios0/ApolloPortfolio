@@ -17,6 +17,11 @@ window.onload = function() {
       "image": "./assets/cyberware.png"
     },
     {
+      "title": "Custom Pause Menu",
+      "description": "A standalone, dynamic pause menu. Built for a Cyberpunk2077 inspired server.",
+      "image": "./assets/pauseMenu.png"
+    },
+    {
       "title": "AP Block Minigame",
       "description": "A Small, highly customizable standalone block minigame.",
       "image": "./assets/blockGame.png"
