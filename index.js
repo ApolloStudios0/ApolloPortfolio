@@ -73,7 +73,7 @@ window.onload = function() {
     },
     {
       "title": "Custom Skills Framework",
-      "description": "A skills framework for QBCORE/ESX. Allows you to create skills, level them up & have them effect the player in real time.",
+      "description": "A skills framework for QBCORE/ESX. Allows you to create skills, level them up & have them effect the player in real time. Preview: https://streamable.com/f7hwpf",
       "image": "./assets/skills.png"
     },
     {
