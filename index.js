@@ -2,6 +2,11 @@
 window.onload = function() {
   var cards = [
     {
+      "title": "Dynamic Crafting",
+      "description": "A fully dynamic crafting system for OX/QBCore - with a unique and smooth interface & built-in logging.",
+      "image": "./assets/crafting.png"
+    },
+    {
       "title": "AETOS Server Manager",
       "description": "A 0.0ms Server Management Panel - Controls: Players, Server, Scripts & Has Hundreds Of Development Options.",
       "image": "./assets/aetos.png"
@@ -122,11 +127,6 @@ window.onload = function() {
       "title": "AP Payments v2",
       "description": "An update to the original AP Payments. This version allows players to invoice another player on the spot, or pay a bill at any location.",
       "image": "./assets/monzoCard.png"
-    },
-    {
-      "title": "AP Crafting",
-      "description": "A modern crafting system for QBCORE.",
-      "image": "./assets/crafting.png"
     },
     {
       "title": "Medical Trauma Team UI",
