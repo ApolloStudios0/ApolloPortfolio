@@ -21,6 +21,43 @@ window.onload = function() {
       "description": "A standalone, dynamic pause menu. Built for a Cyberpunk2077 inspired server.",
       "image": "./assets/pauseMenu.png"
     },
+
+    {
+      "title": "Apollo Antihook",
+      "description": "A middleman servicer for fivem. Includes co-ordinate KVP spoofing, global cooldowns & location assignment within resources. An all-in-one for protection.",
+      "image": "./assets/antihook.png"
+    },
+
+    {
+      "title": "Android Raid",
+      "description": "A full system to raid android factories. Customizable levels, difficulties, enemies & lootpools.",
+      "image": "./assets/androidraid.png"
+    },
+
+    {
+      "title": "Drugs Pack",
+      "description": "A full weed system - with growing, harvesting, drying, packaging, selling & more.",
+      "image": "./assets/drugs.png"
+    },
+
+    {
+      "title": "Cybernetics Pack",
+      "description": "A full system to dynamically install cybernetics (powerups) to players via a ripperdoc interface.",
+      "image": "./assets/cyberkits.png"
+    },
+
+    {
+      "title": "EPOS Card Machine",
+      "description": "A payment system, modelled after SumUp card processing.",
+      "image": "./assets/eposcard.png"
+    },
+
+    {
+      "title": "Asteroid Mining",
+      "description": "A standalone, dynamic asteroid mining system. The asteroids ping to phones, and players can mine them for resources using an asteroid miner.",
+      "image": "./assets/asteroid.png"
+    },
+
     {
       "title": "AP Block Minigame",
       "description": "A Small, highly customizable standalone block minigame.",
