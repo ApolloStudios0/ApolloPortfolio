@@ -28,6 +28,31 @@ window.onload = function() {
     },
 
     {
+      "title": "Netrunners UI",
+      "description": "A dynamic netrunning system for a QBCore Cyberpunk2077 themed server. Allows interacting with entities, players & vehicles.",
+      "image": "./assets/netruner.png"
+    },
+
+    {
+      "title": "Cyberpunk: Assault In Progress",
+      "description": "A cyberpunk assault in progress mission. Requires ncpdscanner & periodically pings an event to those with the item. Uses ApolloAntiHook for global loot alloction & utilitylib for guards.",
+      "image": "./assets/assaultinprogress.png"
+    },
+
+    {
+      "title": "Vangelico Admin UI",
+      "description": "A custom UI for a vangelico jewel heist. Uses Skills framework to assign fake packets & timings.",
+      "image": "./assets/vangieadmin.png"
+    },
+
+    {
+      "title": "Fivem: A New Map",
+      "description": "Sick and tired of FiveM's map being overcluttered with blips and names? Use FiveM a new map to organize & catalog your blips.",
+      "image": "./assets/newmap.png"
+    },
+
+
+    {
       "title": "Apollo Antihook",
       "description": "A middleman servicer for fivem. Includes co-ordinate KVP spoofing, global cooldowns & location assignment within resources. An all-in-one for protection.",
       "image": "./assets/antihook.png"
