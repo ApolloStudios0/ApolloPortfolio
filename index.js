@@ -30,7 +30,7 @@ window.onload = function() {
     {
       "title": "Netrunners UI",
       "description": "A dynamic netrunning system for a QBCore Cyberpunk2077 themed server. Allows interacting with entities, players & vehicles.",
-      "image": "./assets/netruner.png"
+      "image": "./assets/netrunner.png"
     },
 
     {
