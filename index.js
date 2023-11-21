@@ -7,6 +7,11 @@ window.onload = function() {
       "image": "./assets/crafting.png"
     },
     {
+      "title": "Dynamic Markets (Item Prices)",
+      "description": "A fully dynamic item pricing script. Sync to all players & uses a logarithmic formula to calculate prices based on supply & demand. Preview it here: https://www.youtube.com/watch?v=_z8_L6w6cU8",
+      "image": "./assets/dynamicMarkets.png"
+    },
+    {
       "title": "AETOS Server Manager",
       "description": "A 0.0ms Server Management Panel - Controls: Players, Server, Scripts & Has Hundreds Of Development Options.",
       "image": "./assets/aetos.png"
