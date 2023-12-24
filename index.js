@@ -12,6 +12,11 @@ window.onload = function() {
       "image": "./assets/dynamicMarkets.png"
     },
     {
+      "title": "Police IPAD MDT",
+      "description": "An IPAD style MDT for Police/EMS. Handles everything inside one UI - including: Warrants, Tickets, Arrests, Medical Records & More.",
+      "image": "./assets/ipad.png"
+    },
+    {
       "title": "AETOS Server Manager",
       "description": "A 0.0ms Server Management Panel - Controls: Players, Server, Scripts & Has Hundreds Of Development Options.",
       "image": "./assets/aetos.png"
