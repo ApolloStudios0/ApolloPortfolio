@@ -4,7 +4,7 @@ window.onload = function() {
     {
       "title": "Dynamic Crafting",
       "description": "A fully dynamic crafting system for OX/QBCore - with a unique and smooth interface & built-in logging.",
-      "image": "./assets/crafting.png"
+      "image": "./assets/newCrafting.png"
     },
     {
       "title": "Antihook Panel v2",
