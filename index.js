@@ -7,6 +7,11 @@ window.onload = function() {
       "image": "./assets/crafting.png"
     },
     {
+      "title": "Antihook Panel v2",
+      "description": "The second rendition of a WebUI panel (in use) for logging all player actions live. Filterable, copyable & traceable.",
+      "image": "./assets/apanel.png"
+    },
+    {
       "title": "Dynamic Markets (Item Prices)",
       "description": "A fully dynamic item pricing script. Sync to all players & uses a logarithmic formula to calculate prices based on supply & demand. Preview it here: https://www.youtube.com/watch?v=_z8_L6w6cU8",
       "image": "./assets/dynamicMarkets.png"
