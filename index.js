@@ -12,6 +12,16 @@ window.onload = function() {
       "image": "./assets/apanel.png"
     },
     {
+      "title": "AP City Hall",
+      "description": "A Modern QBCORE Job Searching/License UI",
+      "image": "./assets/cityHall.png"
+    },
+    {
+      "title": "LunarAuthority",
+      "description": "A custom admin menu, originally built for QBCORE. Has hundreds of features, including: Player Management, Server Management, Script Management & more.",
+      "image": "./assets/lunarAuthority.png"
+    },
+    {
       "title": "Dynamic Markets (Item Prices)",
       "description": "A fully dynamic item pricing script. Sync to all players & uses a logarithmic formula to calculate prices based on supply & demand. Preview it here: https://www.youtube.com/watch?v=_z8_L6w6cU8",
       "image": "./assets/dynamicMarkets.png"
@@ -25,11 +35,6 @@ window.onload = function() {
       "title": "AETOS Server Manager",
       "description": "A 0.0ms Server Management Panel - Controls: Players, Server, Scripts & Has Hundreds Of Development Options.",
       "image": "./assets/aetos.png"
-    },
-    {
-      "title": "LunarAuthority",
-      "description": "A custom admin menu, originally built for QBCORE. Has hundreds of features, including: Player Management, Server Management, Script Management & more.",
-      "image": "./assets/lunarAuthority.png"
     },
     {
       "title": "Cyberware Menu",
@@ -65,8 +70,11 @@ window.onload = function() {
       "description": "Sick and tired of FiveM's map being overcluttered with blips and names? Use FiveM a new map to organize & catalog your blips.",
       "image": "./assets/newmap.png"
     },
-
-
+    {
+      "title": "Custom Skills Framework",
+      "description": "A skills framework for QBCORE/ESX. Allows you to create skills, level them up & have them effect the player in real time. Preview: https://streamable.com/f7hwpf",
+      "image": "./assets/skills.png"
+    },
     {
       "title": "Apollo Antihook",
       "description": "A middleman servicer for fivem. Includes co-ordinate KVP spoofing, global cooldowns & location assignment within resources. An all-in-one for protection.",
@@ -109,11 +117,6 @@ window.onload = function() {
       "image": "./assets/blockGame.png"
     },
     {
-      "title": "AP City Hall",
-      "description": "A Modern QBCORE Job Searching/License UI",
-      "image": "./assets/cityHall.png"
-    },
-    {
       "title": "Stock Market",
       "description": "A dynamic stock market for dynamic item pricing. Easy to integrate, simple to view & easy to use. Players can also purchase adverts for display on the right.",
       "image": "./assets/stockm.png"
@@ -152,11 +155,6 @@ window.onload = function() {
       "title": "Custom Drug System",
       "description": "A complete custom drugs framework. Including Weed, Cocaine & Other Custom Chemical Mixing - paired with a custom built UI.",
       "image": "./assets/cDrugs.png"
-    },
-    {
-      "title": "Custom Skills Framework",
-      "description": "A skills framework for QBCORE/ESX. Allows you to create skills, level them up & have them effect the player in real time. Preview: https://streamable.com/f7hwpf",
-      "image": "./assets/skills.png"
     },
     {
       "title": "AP Payments",
