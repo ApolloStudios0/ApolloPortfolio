@@ -37,6 +37,11 @@ window.onload = function() {
       "image": "./assets/cityHall.png"
     },
     {
+      "title": "[E] Custom Doorlock Sprites",
+      "description": "A custom doorlock sprite for unlocking/locking ox_doorlock doors.",
+      "image": "./assets/doorlock.png"
+    },
+    {
       "title": "LunarAuthority",
       "description": "A custom admin menu, originally built for QBCORE. Has hundreds of features, including: Player Management, Server Management, Script Management & more.",
       "image": "./assets/lunarAuthority.png"
