@@ -12,6 +12,26 @@ window.onload = function() {
       "image": "./assets/apanel.png"
     },
     {
+      "title": "Five Horizons",
+      "description": "A fully functional FiveHorizons UI for a deathmatch server. UI sketched, edited & developed. With daily challenges & 0ms runtime.",
+      "image": "./assets/fiveHorizons.png"
+    },
+    {
+      "title": "Respawn (Futuristic)",
+      "description": "Version one of a functional respawn UI for a futuristic CB77 themed server.",
+      "image": "./assets/respawn.png"
+    },
+    {
+      "title": "Deathscreen CB77 Themed",
+      "description": "Version one of a functional deathscreen UI for a futuristic CB77 themed server.",
+      "image": "./assets/nural_wipe.png"
+    },
+    {
+      "title": "PD Badge",
+      "description": "A PD, EMS & Government ID Badge System Built From The Ground Up. Useable & Shows On Users Screens With Name & Rank for 5 seconds.",
+      "image": "./assets/badge_sys.png"
+    },
+    {
       "title": "AP City Hall",
       "description": "A Modern QBCORE Job Searching/License UI",
       "image": "./assets/cityHall.png"
