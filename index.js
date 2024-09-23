@@ -7,6 +7,11 @@ window.onload = function() {
       "image": "./assets/newCrafting.png"
     },
     {
+      "title": "Material Contracts (Part of Crafting)",
+      "description": "A contract-fulfilment system packaged with Dynamic Crafting. Allows businesses to place material contract orders & have them filled by players.",
+      "image": "./assets/contracts.png"
+    },
+    {
       "title": "Antihook Panel v2",
       "description": "The second rendition of a WebUI panel (in use) for logging all player actions live. Filterable, copyable & traceable.",
       "image": "./assets/apanel.png"
