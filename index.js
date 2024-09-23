@@ -47,6 +47,11 @@ window.onload = function() {
       "image": "./assets/doorlock.png"
     },
     {
+      "title": "Whats New UI",
+      "description": "A menu that shows the latest server changes on a dynamic UI. Only shows once per character when it's first created/spawned or during major updates.",
+      "image": "./assets/whatsnew.png"
+    },
+    {
       "title": "LunarAuthority",
       "description": "A custom admin menu, originally built for QBCORE. Has hundreds of features, including: Player Management, Server Management, Script Management & more.",
       "image": "./assets/lunarAuthority.png"
