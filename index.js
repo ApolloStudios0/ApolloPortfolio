@@ -6,6 +6,43 @@ window.onload = function() {
       "description": "A fully dynamic crafting system for OX/QBCore - with a unique and smooth interface & built-in logging.",
       "image": "./assets/newCrafting.png"
     },
+    
+    {
+      "title": "Crime Tablet V2",
+      "description": "A central hub for all criminal activities. Allows gangs to manage coins, order vehicles, and manage drug deliveries..",
+      "image": "./assets/crimetablet.png"
+    },
+    {
+      "title": "Cyber Multicharacter",
+      "description": "An inspired multicharacter system for a CyberPunk 2077 themed server.",
+      "image": "./assets/multichar.png"
+    },
+    {
+      "title": "Cyberpunk HUD",
+      "description": "An inspired HUD for a CyberPunk 2077 themed server.",
+      "image": "./assets/cyberhud.png"
+    },
+    {
+      "title": "Death Race Inventory",
+      "description": "A death race inspired inventory system for QBCore.",
+      "image": "./assets/redinv.png"
+    },
+    {
+      "title": "City Mayoral Panel",
+      "description": "A city mayoral panel for QBCore. Allows mayors to manage city funds, taxes, businesses & more.",
+      "image": "./assets/mayorpanel.png"
+    },
+    {
+      "title": "Fallout Style Inventory",
+      "description": "A fallout inspired inventory system for QBCore.",
+      "image": "./assets/greeninv.png"
+    },
+    {
+      "title": "Cyber Lifepaths",
+      "description": "An inspired lifepaths system for a CyberPunk 2077 themed server.",
+      "image": "./assets/lifepaths.png"
+    },
+
     {
       "title": "Material Contracts (Part of Crafting)",
       "description": "A contract-fulfilment system packaged with Dynamic Crafting. Allows businesses to place material contract orders & have them filled by players.",
