@@ -216,9 +216,24 @@ body {
   transform: translate(-50%, -50%);
   width: 650px;
 }
-@media screen and (min-width: 3440px) {
-  .Designer {
-    width: 900px;
+@media screen and (min-width: 2560px) {
+  .Introduction {
+    font-size: 35px;
+  }
+  .HelloApollo {
+    font-size: 70px;
+  }
+  .WhatIDo {
+    font-size: 25px;
+  }
+  .JobDesc {
+    font-size: 25px;
+  }
+  .WhatIAlsoDo {
+    font-size: 20px;
+  }
+  .ScrollerText {
+    font-size: 18px;
   }
 }
 
