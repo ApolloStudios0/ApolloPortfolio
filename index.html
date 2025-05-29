@@ -7,20 +7,43 @@
     <title>ApolloStudios Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="body">
-    <div class="Introduction">
-        <h3 class="HelloApollo">Hello, I'm ApolloStudios</h3>
-        <h3 class="WhatIDo">I'm a</h3>
-        <h3 class="JobDesc">UI/UX Designer</h3>
-        <h3 class="WhatIAlsoDo">I also develop FiveM Scripts</h3>
-        <image src="./assets/ap-avatar.svg" class="Avatar"></image>
-        <h3 class="ScrollerText">Scroll Down To View Some Of My Work.</h3>
-        <h3 class="ScrollerText" style="top: 255px;">V</h3>
+<body>
+    <canvas id="hex-bg"></canvas>
+    <header class="main-header">
+        <div class="hero">
+            <img src="./assets/ap-avatar.svg" class="hero-avatar" alt="ApolloStudios Avatar">
+            <div class="hero-text">
+                <h1 class="hero-title">Hello, I'm ApolloStudios</h1>
+                <h2 class="hero-role">UI/UX Designer</h2>
+                <div class="hero-sub">I also develop FiveM Scripts</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down To View Some Of My Work</span>
+            <span class="arrow">▼</span>
+        </div>
+    </header>
+    <main>
+        <section class="portfolio-section">
+            <h2 class="section-title">Project Portfolio</h2>
+            <div class="Container" id="Container"></div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <a href="tos.html" class="tos-link">Sales Terms & Conditions</a>
+        <span class="footer-credit">© ApolloStudios 2025</span>
+    </footer>
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+            <img id="modal-img" class="modal-img" src="" alt="Project Image" />
+            <div class="modal-info">
+                <h2 id="modal-title" class="modal-title"></h2>
+                <p id="modal-desc" class="modal-desc"></p>
+            </div>
+        </div>
     </div>
-    <div><image src="./assets/designer.png" class="Designer"></image></div>
-    <div class="PreviousWork">
-        <div class="Container" id="Container"></div>
-    </div>
+    <script src="./index.js"></script>
+    <script src="./hexgrid.js"></script>
 </body>
-<script src="./index.js"></script>
 </html>

@@ -1,5 +1,5 @@
 // [ Load Cards ]
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
   var cards = [
     {
       "title": "Dynamic Crafting",
@@ -12,10 +12,26 @@ window.onload = function() {
       "description": "A central hub for all criminal activities. Allows gangs to manage coins, order vehicles, and manage drug deliveries..",
       "image": "./assets/crimetablet.png"
     },
+    
+    {
+      "title": "3D Cybernetics System",
+      "description": "A 3D Cybernetics Integration System. Uses 3D rendering NUI's to show the player the cybernetics they have installed. Completely dynamic live, depsite being a 3D model. Could be used for an in-depth medical system too!",
+      "image": "./assets/3dspaces.gif"
+    },
+    {
+      "title": "Cyberware Menu",
+      "description": "A custom cybernetics UI for a CyberPunk 2077 themed server. Allows players to purchase cybernetics, upgrade them & more.",
+      "image": "./assets/cyberware.png"
+    },
     {
       "title": "Cyber Multicharacter",
       "description": "An inspired multicharacter system for a CyberPunk 2077 themed server.",
       "image": "./assets/multichar.png"
+    },
+    {
+      "title": "AntiHook Self-Hosted Logs",
+      "description": "AntiHook hosts it's own log server. It integrates into any system with just a simple event handler. It's also fully customizable, so you can add your own logs/section/events to it. Contains full graphing abilities to view richest players, etc.",
+      "image": "./assets/logs.png"
     },
     {
       "title": "Cyberpunk HUD",
@@ -23,9 +39,19 @@ window.onload = function() {
       "image": "./assets/cyberhud.png"
     },
     {
+      "title": "Cyber-Phone 77",
+      "description": "A tilted-style phone system for a Cyberpunk2077 Inspired server. Has all the features of a normal phone, but with a cyberpunk twist. Built using VUE/VITE/Vuetify.",
+      "image": "./assets/cyberphone.png"
+    },
+    {
       "title": "Death Race Inventory",
       "description": "A death race inspired inventory system for QBCore.",
       "image": "./assets/redinv.png"
+    },
+    {
+      "title": "Netrunners UI",
+      "description": "A dynamic netrunning system for a QBCore Cyberpunk2077 themed server. Allows interacting with entities, players & vehicles.",
+      "image": "./assets/netrunner.png"
     },
     {
       "title": "City Mayoral Panel",
@@ -109,20 +135,9 @@ window.onload = function() {
       "image": "./assets/aetos.png"
     },
     {
-      "title": "Cyberware Menu",
-      "description": "A custom cybernetics UI for a CyberPunk 2077 themed server. Allows players to purchase cybernetics, upgrade them & more.",
-      "image": "./assets/cyberware.png"
-    },
-    {
       "title": "Custom Pause Menu",
       "description": "A standalone, dynamic pause menu. Built for a Cyberpunk2077 inspired server.",
       "image": "./assets/pauseMenu.png"
-    },
-
-    {
-      "title": "Netrunners UI",
-      "description": "A dynamic netrunning system for a QBCore Cyberpunk2077 themed server. Allows interacting with entities, players & vehicles.",
-      "image": "./assets/netrunner.png"
     },
 
     {
@@ -295,40 +310,83 @@ window.onload = function() {
     },
   ];
 
-  // Loop Through Cards
-  for (var i = 0; i < cards.length; i++) {
-    // Create Card
-    var card = document.createElement("div");
-    card.className = "Card";
+  var container = document.getElementById('Container');
+  if (!container) return;
 
-    // Create Card Image
-    var cardImage = document.createElement("img");
-    cardImage.className = "CardImage";
-    cardImage.src = cards[i].image;
+  // Modal elements
+  var modal = document.getElementById('modal');
+  var modalImg = document.getElementById('modal-img');
+  var modalTitle = document.getElementById('modal-title');
+  var modalDesc = document.getElementById('modal-desc');
+  var modalClose = document.getElementById('modal-close');
 
-    // Create Card Title
-    var cardTitle = document.createElement("h3");
-    cardTitle.className = "CardTitle";
-    cardTitle.innerHTML = cards[i].title;
-
-    // Create Card Description
-    var cardDescription = document.createElement("h3");
-    cardDescription.className = "CardDescription";
-    cardDescription.innerHTML = cards[i].description;
-
-    // Append Card Image To Card
-    card.appendChild(cardImage);
-
-    // Append Card Title To Card
-    card.appendChild(cardTitle);
-
-    // Append Card Description To Card
-    card.appendChild(cardDescription);
-
-    // Append Card To Body
-    document.body.appendChild(card);
-
-    // Add div to Container div
-    document.getElementById("Container").appendChild(card);
+  function openModal(card) {
+    modalImg.src = card.image;
+    modalImg.alt = card.title + ' image';
+    modalTitle.textContent = card.title;
+    modalDesc.textContent = card.description;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { modal.focus && modal.focus(); }, 10);
   }
-};  
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    modalImg.src = '';
+  }
+
+  // Close modal on button click
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+  // Close modal on click outside content
+  if (modal) {
+    modal.addEventListener('mousedown', function(e) {
+      if (e.target === modal) closeModal();
+    });
+  }
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (modal.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+      closeModal();
+    }
+  });
+
+  for (var i = 0; i < cards.length; i++) {
+    var card = document.createElement('div');
+    card.className = 'Card';
+
+    var cardImage = document.createElement('img');
+    cardImage.className = 'CardImage';
+    cardImage.src = cards[i].image;
+    cardImage.alt = cards[i].title + ' image';
+
+    var cardTitle = document.createElement('div');
+    cardTitle.className = 'CardTitle';
+    cardTitle.textContent = cards[i].title;
+
+    var cardDescription = document.createElement('div');
+    cardDescription.className = 'CardDescription';
+    cardDescription.textContent = cards[i].description;
+
+    card.appendChild(cardImage);
+    card.appendChild(cardTitle);
+    card.appendChild(cardDescription);
+    container.appendChild(card);
+
+    // Open modal on card or image click
+    (function(cardData) {
+      card.addEventListener('click', function(e) {
+        // Only open if not clicking a link or button inside
+        if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
+          openModal(cardData);
+        }
+      });
+      cardImage.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openModal(cardData);
+      });
+    })(cards[i]);
+  }
+});  
