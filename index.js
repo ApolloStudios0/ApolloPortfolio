@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     {
       "title": "3D Cybernetics System",
-      "description": "A 3D Cybernetics Integration System. Uses 3D rendering NUI's to show the player the cybernetics they have installed. Completely dynamic live, depsite being a 3D model. Could be used for an in-depth medical system too!",
+      "description": "A 3D Cybernetics Integration System. Uses 3D rendering NUI's to show the player the cybernetics they have installed. Completely dynamic live, despite being a 3D model. Could be used for an in-depth medical system too!",
       "image": "./assets/3dspaces.gif"
     },
     {
